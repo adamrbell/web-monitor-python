@@ -18,7 +18,5 @@ apt-get install -y \
 python3 \
 python-pip \
 
-RUN pip install -r /code/requirements.txt
-
 #VOLUME
 VOLUME /code
