@@ -15,8 +15,11 @@ echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restrict
 # install dependencies
 apt-get update && \ 
 apt-get install -y \
-python3 \
+python \
 python-pip && \
+
+# install python libs from requirements
+pip install -r /code/requirements.txt && \
 
 # clean up
 apt-get clean && \
