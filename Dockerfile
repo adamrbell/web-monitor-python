@@ -15,7 +15,10 @@ echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restrict
 # install dependencies
 apt-get update && \ 
 apt-get install -y \
-python \
+python3 \
 python-pip \
 
+RUN pip install -r /code/requirements.txt
 
+#VOLUME
+VOLUME /code
