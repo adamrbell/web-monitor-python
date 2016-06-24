@@ -18,9 +18,6 @@ apt-get install -y \
 python \
 python-pip && \
 
-# install python libs from requirements
-pip install -r /code/requirements.txt && \
-
 # clean up
 apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
