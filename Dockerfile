@@ -16,7 +16,11 @@ echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restrict
 apt-get update && \ 
 apt-get install -y \
 python3 \
-python-pip \
+python-pip && \
+
+# clean up
+apt-get clean && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #VOLUME
 VOLUME /code
