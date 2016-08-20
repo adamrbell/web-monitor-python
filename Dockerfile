@@ -22,6 +22,9 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #VOLUME
 VOLUME /code
 
+COPY /code/requirements.txt /tmp/
+RUN pip3 install --requirement /tmp/requirements.txt
+
 # Copy cron file
 COPY /code/cron.txt /etc/crontab
 RUN chmod 644 /etc/crontab
