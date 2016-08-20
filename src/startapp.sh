@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # install python libs from requirements
-pip install -r /code/requirements.txt
+pip3 install --requirement /code/requirements.txt
 
-# run Main code block
-python /code/main.py
+# Copy cron file
+cp /code/cron.txt /etc/crontab
+chmod 644 /etc/crontab
+
+service cron start
