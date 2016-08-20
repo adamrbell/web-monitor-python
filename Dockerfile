@@ -5,6 +5,9 @@ MAINTAINER Sparklyballs <sparklyballs@linuxserver.io>
 # Use baseimage-docker's init system
 CMD ["/sbin/my_init"]
 
+# Add local files
+ADD src/ /
+
 # repositories
 RUN echo 'deb http://archive.ubuntu.com/ubuntu trusty main universe restricted' > /etc/apt/sources.list && \
 echo 'deb http://archive.ubuntu.com/ubuntu trusty-updates main universe restricted' >> /etc/apt/sources.list && \
@@ -21,12 +24,3 @@ rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #VOLUME
 VOLUME /code
-
-COPY /code/requirements.txt /tmp/
-RUN pip3 install --requirement /tmp/requirements.txt
-
-# Copy cron file
-COPY /code/cron.txt /etc/crontab
-RUN chmod 644 /etc/crontab
-
-CMD ["cron", "-f"]
