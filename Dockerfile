@@ -20,6 +20,7 @@ python3-pip && \
 firefox && \
 xserver-xephyr && \
 xvfb && \
+zlib1g-dev && \
 
 # clean up
 apt-get clean && \
